@@ -29,16 +29,16 @@
         @foreach ($mahasiswas as $Mahasiswa)
             <tr>
 
-                <td>{{ $Mahasiswa->Nim }}</td>
-                <td>{{ $Mahasiswa->Nama }}</td>
-                <td>{{ $Mahasiswa->Kelas }}</td>
-                <td>{{ $Mahasiswa->Jurusan }}</td>
-                <td>{{ $Mahasiswa->No_Handphone }}</td>
+                <td>{{ $Mahasiswa->nim }}</td>
+                <td>{{ $Mahasiswa->nama }}</td>
+                <td>{{ $Mahasiswa->kelas }}</td>
+                <td>{{ $Mahasiswa->jurusan }}</td>
+                <td>{{ $Mahasiswa->no_handphone }}</td>
                 <td>
-                    <form action="{{ route('mahasiswas.destroy', $Mahasiswa->Nim) }}" method="POST">
+                    <form action="{{ route('mahasiswas.destroy', $Mahasiswa->nim) }}" method="POST">
 
-                        <a class="btn btn-info" href="{{ route('mahasiswas.show', $Mahasiswa->Nim) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('mahasiswas.edit', $Mahasiswa->Nim) }}">Edit</a>
+                        <a class="btn btn-info" href="{{ route('mahasiswas.show', $Mahasiswa->nim) }}">Show</a>
+                        <a class="btn btn-primary" href="{{ route('mahasiswas.edit', $Mahasiswa->nim) }}">Edit</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
