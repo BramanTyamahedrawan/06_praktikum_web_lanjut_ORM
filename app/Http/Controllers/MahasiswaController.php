@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Mahasiswas;
+use App\Models\Mahasiswa;
 
 class MahasiswaController extends Controller
 {
@@ -13,7 +13,7 @@ class MahasiswaController extends Controller
     public function index()
     {
         //fungsi eloquent menampilkan data menggunakan pagination
-        $mahasiswas = Mahasiswas::orderBy('nim', 'desc')->paginate(6);
+        $mahasiswas = Mahasiswa::orderBy('nim', 'desc')->paginate(6);
         return view('mahasiswas.index', compact('mahasiswas'))
             ->with('i', (request()->input('page', 1) - 1) * 6);
     }
@@ -40,7 +40,7 @@ class MahasiswaController extends Controller
             'no_handphone' => 'required',
         ]);
         //fungsi eloquent untuk menambah data
-        Mahasiswas::create($request->all());
+        Mahasiswa::create($request->all());
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('mahasiswas.index')
             ->with('success', 'Mahasiswa Berhasil Ditambahkan');
@@ -52,7 +52,7 @@ class MahasiswaController extends Controller
     public function show($nim)
     {
         //menampilkan detail data dengan menemukan/berdasarkan Nim Mahasiswa
-        $Mahasiswa = Mahasiswas::find($nim);
+        $Mahasiswa = Mahasiswa::find($nim);
         return view('mahasiswas.detail', compact('Mahasiswa'));
     }
 
@@ -62,7 +62,7 @@ class MahasiswaController extends Controller
     public function edit($nim)
     {
         //menampilkan detail data dengan menemukan berdasarkan Nim Mahasiswa untuk diedit
-        $Mahasiswa = Mahasiswas::find($nim);
+        $Mahasiswa = Mahasiswa::find($nim);
         return view('mahasiswas.edit', compact('Mahasiswa'));
     }
 
@@ -80,7 +80,7 @@ class MahasiswaController extends Controller
             'no_handphone' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
-        Mahasiswas::find($nim)->update($request->all());
+        Mahasiswa::find($nim)->update($request->all());
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('mahasiswas.index')
             ->with('success', 'Mahasiswa Berhasil Diupdate');
@@ -92,7 +92,7 @@ class MahasiswaController extends Controller
     public function destroy($nim)
     {
         //fungsi eloquent untuk menghapus data
-        Mahasiswas::find($nim)->delete();
+        Mahasiswa::find($nim)->delete();
         return redirect()->route('mahasiswas.index')
             ->with('success', 'Mahasiswa Berhasil Dihapus');
     }

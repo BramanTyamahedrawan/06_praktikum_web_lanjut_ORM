@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\Mahasiswa as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model; //Model Eloquent
 
-class Mahasiswas extends Model //Definisi Model
+class Mahasiswa extends Model //Definisi Model
 {
     use HasFactory;
 
