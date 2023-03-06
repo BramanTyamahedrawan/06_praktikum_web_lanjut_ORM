@@ -8,11 +8,11 @@ use Illuminate\Foundation\Auth\Mahasiswa as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model; //Model Eloquent
 
-class Mahasiswa extends Model //Definisi Model
+class Mahasiswas extends Model //Definisi Model
 {
     use HasFactory;
 
-    protected $table = "mahasiswa"; // Eloquent akan membuat model mahasiswa menyimpan record di tabel mahasiswas
+    protected $table = "mahasiswas"; // Eloquent akan membuat model mahasiswa menyimpan record di tabel mahasiswas
     public $timestamps = false;
     protected $primaryKey = 'nim'; // Memanggil isi DB Dengan primarykey
 
