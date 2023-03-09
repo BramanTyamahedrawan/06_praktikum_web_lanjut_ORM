@@ -20,8 +20,6 @@ class MahasiswaController extends Controller
         } else {
             $mahasiswas = Mahasiswa::paginate(5);
         }
-
-
         return view('mahasiswas.index', ['mahasiswas' => $mahasiswas]);
     }
 

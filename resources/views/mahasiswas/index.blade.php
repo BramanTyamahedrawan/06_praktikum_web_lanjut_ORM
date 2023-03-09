@@ -17,6 +17,19 @@
         </div>
     @endif
 
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="{{ route('mahasiswas.index') }}" method="GET">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="Nama" placeholder="Cari berdasarkan nama..." aria-label="first name">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-secondary">Cari</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <table class="table table-bordered">
         <tr>
             <th>Nim</th>
@@ -51,5 +64,6 @@
             </tr>
         @endforeach
     </table>
+
     {{ $mahasiswas->links()}}
 @endsection
